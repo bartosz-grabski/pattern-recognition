@@ -1,3 +1,18 @@
+# 3.0
+
+x = linspace(0, 2*pi);
+y = sin(x);
+noise = randn(1,numel(x)) * 0.1;
+ynoise = y+noise;
+
+plot(x,y,x, ynoise);
+
+window = 5;
+mesh = ones(1,window) / window;
+c = conv(ynoise, mesh, 'same');
+
+plot(x,y,x,ynoise,x,c);
+
 # 4.0
 
 ################# Exercise 1
